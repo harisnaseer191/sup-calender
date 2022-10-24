@@ -1,0 +1,42 @@
+<div class="row">
+  <!-- Month Selection goese here -->
+
+  <div class="row m-4 ">
+    <div class="col-md-6">
+      <div class="calendar-box">
+        <table class="table table-bordered mb-0">
+          <thead>
+            <tr>
+              <th>SUN</th>
+              <th>MON</th>
+              <th>TUE</th>
+              <th>WED</th>
+              <th>THU</th>
+              <th>FRI</th>
+              <th>SAT</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let days of calendars">
+              <td
+                *ngFor="let item of days"
+                [ngClass]="{ cursor: item.day != 0 }"
+              >
+                <ng-container *ngIf="item.day != 0">
+                  <span class="calendar-date">
+                    {{ item.day }}
+                  </span>
+                </ng-container>
+
+                <ng-container *ngIf="item.day == 0">
+                  <p></p>
+                  <p></p>
+                </ng-container>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
